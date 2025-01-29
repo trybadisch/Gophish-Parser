@@ -5,7 +5,7 @@ False clicks are filtered through an invisible URL in the mail template includin
 Also checks false input submissions when the user email is different from the form payload.
 
 It requires both Gophish Results.csv and Events.csv as input.
-It provides 3 outpus:
+It provides 3 outputs:
 - users_at_risk.xlsx
 - position_results.xlsx
 - fake_input.json
