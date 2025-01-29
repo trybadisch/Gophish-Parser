@@ -94,7 +94,7 @@ update_totals()
 # Create users at risk (Risks, Users at Critical risk, Users at High risk)
 def get_risk_users(data):
 
-	def risk_csv(risk, action):
+	def risk_csv(action):
 		risk = {}
 		for key,val in enumerate(data):
 			if data[val][action] > 0:
@@ -106,10 +106,9 @@ def get_risk_users(data):
 		risk = pd.DataFrame.from_dict(risk, orient='index')
 		return(risk)
 
-	critical = high = {}
-	critical = risk_csv(critical, "submits")
+	critical = risk_csv("submits")
 	critical.columns = [x.capitalize() for x in critical.columns]
-	high = risk_csv(high, "clicks")
+	high = risk_csv("clicks")
 	high.columns = [x.capitalize() for x in high.columns]
 
 	all_users = data
